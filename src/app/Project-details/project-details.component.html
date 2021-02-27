@@ -1,0 +1,91 @@
+<div class="" *ngIf="selectedProject">
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-sm-6">
+                <app-image-carousel [isEnlarge]="true" [images]="selectedProject.ProjectDetailImages">
+                </app-image-carousel>
+            </div>
+            <div class="col-sm-6">
+                <div class="row`">
+                    <h4>{{selectedProject.ProjectName}}</h4>
+                </div>
+                <div class="row">
+                    <h6 class="ml-3">by</h6>
+                    <h6 class="ml-1 default-col">{{selectedProject.BuilderName}}</h6>
+
+                </div>
+                <div class="row d-flex ml-0 mt-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-geo-alt-fill default-fill-col" viewBox="0 0 16 16">
+                        <path
+                            d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                    </svg>
+                    <h6 class="ml-1">{{selectedProject.Area}} {{selectedProject.City}}</h6>
+                </div>
+                <div class="container ml-0">
+                    <div class="row flex-nowrap mt-2 pt-2" *ngFor="let variant of selectedProject.Variants">
+                        <div class="col-sm" style="padding-left:0.25rem">
+                            <div style="font-size:15px;font-weight:400">{{variant.Name}}</div>
+                            <div class="default-col" style="font-size:13px;font-weight:600">Apartment
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div style="font-size:15px;font-weight:400">{{variant.MaxCarpet > 0 ? getCarpetAreaString(variant.MinCarpet, variant.MaxCarpet) : variant.MinCarpet}} sq ft
+                            </div>
+                            <div class="default-col" style="font-size:13px;font-weight:600">{{variant.CarpetOrSaleable}}
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div style="font-size:15px;font-weight:400">{{variant.MinPrice}} L - {{variant.MaxPrice}} L
+                            </div>
+                            <div class="default-col" style="font-size:13px;font-weight:600">Builder price
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-project-overview [selectedProject]="selectedProject"></app-project-overview>
+
+    <app-project-properties [selectedProject]="selectedProject"></app-project-properties>
+
+    <div *ngIf="selectedProject.IsAmentiesImage">
+        <div class="container-fluid mt-2 default-bg-col">
+            <div class="row" style="margin-left: 20px;margin-right: 20px; border-radius: 4px;">
+                <div class="col-sm-12 text-center">
+                    <h4 style="color: white !important;">{{selectedProject.ProjectName}} Amenties</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid my-4">
+            <div class="row">
+                <div class="col">
+                    <img class="d-block w-100" [src]="selectedProject.AmentiesImageSrc">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="container-fluid mt-2 default-bg-col">
+            <div class="row" style="margin-left: 20px;margin-right: 20px; border-radius: 4px;">
+                <div class="col-sm-12 text-center">
+                    <h4 style="color: white !important;"> About {{selectedProject.ProjectName}}</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid my-4">
+            <div class="row">
+                <div class="col">
+                    {{selectedProject.About}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <app-footer></app-footer>
+</div>

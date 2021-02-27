@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+.cursor-p {
+    cursor: pointer;
+}
+
+.default-col {
+    color: rgb(192, 148, 53)!important;
+}
+
+.default-bg-col {
+    background-color: rgb(192, 148, 53)!important;
+}
+
+.default-fill-col {
+    fill: rgb(192, 148, 53)!important;
+}

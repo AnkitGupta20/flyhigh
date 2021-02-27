@@ -1,0 +1,88 @@
+.floorPlanBorder {
+    border-left-color: rgb(192, 148, 53)!important;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-bottom-color: rgb(192, 148, 53)!important;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-right-color: rgb(192, 148, 53)!important;
+    border-right-style: solid;
+    border-right-width: 2px;
+}
+
+.floorPlan-Border-nobottom {
+    border-left-color: rgb(192, 148, 53)!important;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-top-color: rgb(192, 148, 53)!important;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-right-color: rgb(192, 148, 53)!important;
+    border-right-style: solid;
+    border-right-width: 2px;
+}
+
+.border-bottom-2 {
+    border-bottom-color: rgb(192, 148, 53)!important;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.border-bottom-0 {
+    border-bottom-width: 0px!important;
+}
+
+.margin-bottom-minus-2 {
+    margin-bottom: -2px;
+}
+
+.text-color-white {
+    color: white;
+}
+
+.tab-non-selected {
+    background: black!important;
+    color: rgb(192, 148, 53)!important;
+    border-bottom: rgb(192, 148, 53)!important;
+}
+
+.flatTypeButtonStyle button:hover {
+    color: white;
+    background-color: rgb(192, 148, 53);
+}
+
+.flatTypeButtonStyle a:hover {
+    color: white!important;
+    background-color: rgb(192, 148, 53);
+}
+
+.flatTypeButtonStyle {
+    color: rgb(192, 148, 53)!important;
+    background-color: white!important;
+}
+
+.opacity-1 {
+    opacity: 1!important;
+}
+
+.Variant-Selected-style {
+    border-color: rgb(192, 148, 53)!important;
+    border-style: solid;
+    border-width: 2px;
+    color: white!important;
+    background-color: rgb(192, 148, 53)!important;
+    ;
+}
+
+.Variant-not-Selected-style {
+    border-color: rgb(192, 148, 53)!important;
+    border-style: solid;
+    border-width: 2px;
+    background-color: white;
+    color: rgb(192, 148, 53)!important;
+    ;
+}
+
+.cursor-p {
+    cursor: pointer!important;
+}

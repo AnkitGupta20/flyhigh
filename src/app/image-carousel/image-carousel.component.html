@@ -1,0 +1,44 @@
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade cursor-p" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li (click)="onIndicatorClick(item.id)" *ngFor="let item of images" [class.active]="item.isActive"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item" [class.active]="imageItem.isActive" *ngFor="let imageItem of images">
+            <img (click)="openImagesInModal(imageItem.id)" class="d-block w-100" [src]="imageItem.imageUrl" alt="First slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" (click)="OnPreClick()">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" (click)="OnNextClick()">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+<ng-template #imageModal>
+    <div>
+        <div class="modal-body p-0">
+            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li (click)="onIndicatorClick(item.id)" *ngFor="let item of images" [class.active]="item.isActive"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item" [class.active]="imageItem.isActive" *ngFor="let imageItem of images">
+                        <img class="d-block w-100" [src]="imageItem.imageUrl" alt="First slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" (click)="OnPreClick()">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" (click)="OnNextClick()">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</ng-template>

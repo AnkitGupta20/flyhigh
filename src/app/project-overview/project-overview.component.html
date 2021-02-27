@@ -1,0 +1,65 @@
+<div class="container-fluid mt-2" style="background-color: rgb(192, 148, 53)!important;">
+    <div class="row" style="margin-left: 20px;margin-right: 20px; border-radius: 4px;">
+        <div class="col-sm-12 text-center">
+            <h4 style="color: white !important;">Overview</h4>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row p-2 justify-content-center">
+        <div class="d-flex flex-wrap">
+            <div class="p-4">
+                <div style="font-size:15px;font-weight:400">{{selectedProject.PossessionDate}}</div>
+                <div style="color: rgb(192, 148, 53)!important;font-size:13px;font-weight:600">Possession Date</div>
+            </div>
+
+
+
+            <div class="p-4">
+                <div style="font-size:15px;font-weight:400">{{selectedProject.Status}}</div>
+                <div style="color: rgb(192, 148, 53)!important;font-size:13px;font-weight:600">Status</div>
+            </div>
+
+
+
+            <div class="p-4">
+                <div style="font-size:15px;font-weight:400">{{selectedProject.LaunchDate}}</div>
+                <div style="color: rgb(192, 148, 53)!important;font-size:13px;font-weight:600">Launch Date</div>
+            </div>
+
+
+
+            <div class="p-4">
+                <div style="font-size:15px;font-weight:400">{{selectedProject.TotalApartments}}</div>
+                <div style="color: rgb(192, 148, 53)!important;font-size:13px;font-weight:600">Total Launched apartments
+                </div>
+            </div>
+
+            <div *ngIf="selectedProject.NumberOfTowers > 0" class="p-4">
+                <div style="font-size:15px;font-weight:400">{{selectedProject.NumberOfTowers}}</div>
+                <div style="color: rgb(192, 148, 53)!important;font-size:13px;font-weight:600">Towers
+                </div>
+            </div>
+
+            <div *ngIf="selectedProject.NumberOfUnits > 0" class="p-4">
+                <div style="font-size:15px;font-weight:400">{{selectedProject.NumberOfUnits}}</div>
+                <div style="color: rgb(192, 148, 53)!important;font-size:13px;font-weight:600">Total Units
+                </div>
+            </div>
+
+
+            <div class="p-4">
+                <div style="font-size:15px;font-weight:400">{{selectedProject.TotalArea}}</div>
+                <div style="color: rgb(192, 148, 53)!important;font-size:13px;font-weight:600">Total Area
+                </div>
+            </div>
+
+            <div class="p-4">
+                <div style="font-size:15px;font-weight:400">{{selectedProject.Construction}}</div>
+                <div style="color: rgb(192, 148, 53)!important;font-size:13px;font-weight:600">Availability
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
