@@ -1,10 +1,11 @@
-<div class="container-fluid mt-2" style="background-color: rgb(192, 148, 53)!important;">
-    <div class="row" style="margin-left: 20px;margin-right: 20px; border-radius: 4px;">
+<div class="container-fluid ">
+    <div class="row ">
         <div class="col-sm-12 text-center">
-            <h4 style="color: white !important;">Properties Available</h4>
+            <h4 class="default-bg-col rounded p-2" style="color: white !important;">Properties Available</h4>
         </div>
     </div>
 </div>
+
 
 <div class="container p-4 justify-content-center">
     <div class="">
@@ -21,8 +22,9 @@
                         <div class="container py-2 ">
                             <div class="flatTypeButtonStyle d-flex justify-content-center">
                                 <nav class="cursor-p" *ngIf="projectVar.VariantType.length > 1">
-                                    <div class="nav nav-tabs" role="tablist">
-                                        <a *ngFor="let varType of projectVar.VariantType; let i = index" class="nav-item nav-link active" [ngClass]="{'Variant-Selected-style': varType.IsSelected === true, 'Variant-not-Selected-style' : varType.IsSelected === false, 'ml-2': i > 0 }" (click)="onSelectedVariantType(projectVar.ID,varType.VariantId)">{{varType.isReferenceArea === true ? varType.ReferenceArea : varType.CarpetArea}} sqft</a>
+                                    <div class="nav nav-tabs border-0" role="tablist">
+                                        <a *ngFor="let varType of projectVar.VariantType; let i = index" class="nav-item nav-link active m-2 rounded" [ngClass]="{'Variant-Selected-style': varType.IsSelected === true, 'Variant-not-Selected-style' : varType.IsSelected === false, 'ml-2': i > 0 }"
+                                            (click)="onSelectedVariantType(projectVar.ID,varType.VariantId)">{{varType.isReferenceArea === true ? varType.ReferenceArea : varType.CarpetArea}} sqft</a>
                                     </div>
                                 </nav>
                             </div>

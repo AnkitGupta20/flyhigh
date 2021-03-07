@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ImageUrl } from '../Models/image.model';
 import { Project } from '../Models/project.model';
 import { ProjectService } from '../Services/project.service';
@@ -15,16 +15,26 @@ export class ProjectDetailComponent implements OnInit {
   currentImage: any = new ImageUrl();
 
   ngOnInit(){
-    console.log('routing is working');
     this.activateRoute.params.subscribe(params => {
       const id = params['id'];
       this.getProductDetail(id);
-  });
+      });
+
+      this.router.events.subscribe((evt :any) => {
+        if (!(evt instanceof NavigationEnd)) {
+            return;
+        }
+        window.scrollTo(0, 0)
+        });
   }
 
+  ngAfterViewInit() {
+    
+  }
 
-  constructor(private activateRoute: ActivatedRoute, private service: ProjectService) {
-}
+ 
+  constructor(private activateRoute: ActivatedRoute, private service: ProjectService,private router: Router) {
+  }
 
 private getProductDetail(id: Number) {
   this.service.getProjectDetailsById(id).subscribe((data : Project) => {

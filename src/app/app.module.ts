@@ -10,6 +10,7 @@ import { ProjectPropertiesComponent } from './project-properties/project-propert
 import { VariantDetailsComponent } from './variant-details/variant-details.component';
 import { ImageCarouselComponent } from './image-carousel/image-carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrandsComponent } from './brands/brands.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProjectOverviewComponent,
     ProjectPropertiesComponent,
     VariantDetailsComponent,
-    ImageCarouselComponent
+    ImageCarouselComponent,
+    BrandsComponent
   ],
   imports: [
     BrowserModule,

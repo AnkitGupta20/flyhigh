@@ -17,6 +17,10 @@ export class VariantDetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  ngAfterViewInit() {
+    console.log('Variant Details Component Loader Successfully');
+  }
   
   showModal() {
     this.modal.open(this.imageModal, {size: 'xl'});

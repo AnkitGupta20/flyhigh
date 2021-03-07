@@ -50,11 +50,13 @@
 
     <app-project-properties [selectedProject]="selectedProject"></app-project-properties>
 
+
+
     <div *ngIf="selectedProject.IsAmentiesImage">
-        <div class="container-fluid mt-2 default-bg-col">
-            <div class="row" style="margin-left: 20px;margin-right: 20px; border-radius: 4px;">
+        <div class="container-fluid ">
+            <div class="row ">
                 <div class="col-sm-12 text-center">
-                    <h4 style="color: white !important;">{{selectedProject.ProjectName}} Amenties</h4>
+                    <h4 class="default-bg-col rounded p-2" style="color: white !important;">{{selectedProject.ProjectName}} Amenties</h4>
                 </div>
             </div>
         </div>
@@ -69,10 +71,10 @@
     </div>
 
     <div>
-        <div class="container-fluid mt-2 default-bg-col">
-            <div class="row" style="margin-left: 20px;margin-right: 20px; border-radius: 4px;">
+        <div class="container-fluid ">
+            <div class="row ">
                 <div class="col-sm-12 text-center">
-                    <h4 style="color: white !important;"> About {{selectedProject.ProjectName}}</h4>
+                    <h4 class="default-bg-col rounded p-2" style="color: white !important;">About {{selectedProject.ProjectName}}</h4>
                 </div>
             </div>
         </div>

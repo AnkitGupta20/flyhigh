@@ -58,4 +58,8 @@ export class ProjectPropertiesComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit() {
+    console.log('Project Properties Component Loader Successfully');
+  }
+
 }
