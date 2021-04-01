@@ -1,30 +1,58 @@
 <div class="container my-4">
     <div class="row">
         <div class="col-sm-3 default-bg-col rounded-left">
-            <div class="text-center mt-4">
+            <div class="text-center mt-5 align-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" height="70" width="70" class="bi bi-envelope" viewBox="0 0 10 10">
-                    <path style="fill: white;" d="M0 1v1l4 2 4-2v-1h-8zm0 2v4h8v-4l-4 2-4-2z" id="envelope-closed"></path>    
+                    <path style="fill: white;" d="M0 1v1l4 2 4-2v-1h-8zm0 2v4h8v-4l-4 2-4-2z" id="envelope-closed">
+                    </path>
                 </svg>
                 <h2>Contact Us</h2>
                 <h6>We would love to hear from you !</h6>
             </div>
         </div>
         <div class="col-sm-9">
-            <div>
-                <form>
+            <div *ngIf="contactForm">
+                <form [formGroup]="contactForm" (ngSubmit)="sendMail()">
                     <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        <label class="font-weight-bold" for="name">Full Name</label>
+                        <input formControlName="name" type="text" class="form-control" id="name" placeholder="Your Name">
+                        <div *ngIf="submitted && controls.name.errors" class="alert alert-danger">
+                            <div *ngIf="controls && controls.name.errors.required">Name is required</div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your email">
+                        <label class="font-weight-bold" for="exampleInputEmail1">Email address</label>
+                        <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small>
+                        <div *ngIf="submitted && controls.email.errors" class="alert alert-danger">
+                            <div *ngIf="controls.email.errors.required">Email is required</div>
+                            <div *ngIf="controls.email.errors.email">Email must be a valid email address</div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Message</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label class="font-weight-bold" for="phone">Phone</label>
+                        <input formControlName="phone" type="text" class="form-control" id="phone" placeholder="Your phone number">
+                        <div *ngIf="submitted && controls.phone.errors" class="alert alert-danger">
+                            <div *ngIf="controls && controls.phone.errors.required">Number is required</div>
+                            <div *ngIf="controls.phone.errors.pattern || controls.phone.errors.maxlength || controls.phone.errors.minlength">
+                                Phone number must be in valid format</div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="subject">Subject</label>
+                        <input formControlName="subject" type="text" class="form-control" id="subject" placeholder="Enter Subject">
+                        <div *ngIf="submitted && controls.subject.errors" class="alert alert-danger">
+                            <div *ngIf="controls && controls.subject.errors.required">Subject is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold" for="exampleFormControlTextarea1">Message</label>
+                        <textarea formControlName="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div *ngIf="success" class="alert alert-success text-center" role="alert">
+                        Thank you for contacting us. Our Team will contact you shortly.
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary default-col bg-dark border-0">Send Message</button>
