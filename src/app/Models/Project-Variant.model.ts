@@ -5,8 +5,8 @@ export class ProjectVariant {
     public Name!:string
     public MinCarpet!:number
     public MaxCarpet!:number
-    public MinPrice!:number
-    public MaxPrice!:number
+    public MinPrice!:string
+    public MaxPrice!:string
     public IsSelected!:boolean
     public VariantType!: ProjectVariantType[]
     public CarpetOrSaleable!: string

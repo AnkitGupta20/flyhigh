@@ -11,6 +11,8 @@ import { VariantDetailsComponent } from './variant-details/variant-details.compo
 import { ImageCarouselComponent } from './image-carousel/image-carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrandsComponent } from './brands/brands.component';
+import { ContactComponent } from './contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { BrandsComponent } from './brands/brands.component';
     ProjectPropertiesComponent,
     VariantDetailsComponent,
     ImageCarouselComponent,
-    BrandsComponent
+    BrandsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

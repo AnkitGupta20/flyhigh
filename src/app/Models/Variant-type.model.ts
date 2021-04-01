@@ -2,7 +2,7 @@ export class ProjectVariantType {
     public VariantId!: number
     public VariantName!:string
     public CarpetArea!:Number
-    public Price!: number
+    public Price!: string
     public Status!: string
     public NumberOfBed!: number
     public NumberOfBathrooms!: number

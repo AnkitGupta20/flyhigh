@@ -4,21 +4,21 @@
     </a>
 
     <ul class="nav justify-content-end">
-        <!-- <li class="nav-item" s>
-            <a class="nav-link active" [class.disabled]="isProjectLinkDisabled" [routerLink]="['/home']" [queryParams]="{ id: 'projects'}" style="color: rgb(192, 148, 53)!important;">Projects</a>
-        </li> -->
         <li class="nav-item dropdown default-col">
             <a class="nav-link dropdown-toggle default-col" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Projects
-      </a>
+                Projects
+            </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a *ngFor="let item of projects" class="dropdown-item" [routerLink]="['/project',item.ID]">{{item.ProjectName}}</a>
             </div>
         </li>
 
         <li class="nav-item ">
-            <a class="nav-link text-dark " [routerLink]="['/home']" [queryParams]="{ id: 'contact'}" style="color: rgb(192, 148, 53)!important;">Contact Us</a>
+            <a class="nav-link text-dark " style="color: rgb(192, 148, 53)!important;" [routerLink]="['/contact']">Contact Us</a>
         </li>
     </ul>
 </nav>
 <router-outlet></router-outlet>
+<div class="">
+    <app-footer></app-footer>
+</div>
