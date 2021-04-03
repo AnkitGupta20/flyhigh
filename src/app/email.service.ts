@@ -12,6 +12,6 @@ export class EmailService {
   }
 
   sendMail(data: any): Observable<Number> {
-    return this.http.post<number>('http://localhost:3000/sendmail', data);
+    return this.http.post<number>('https://flyhighrealators.herokuapp.com/sendmail', data);
 }
 }
