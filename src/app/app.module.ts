@@ -14,6 +14,8 @@ import { BrandsComponent } from './brands/brands.component';
 import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { QuoteComponent } from './quote/quote.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     VariantDetailsComponent,
     ImageCarouselComponent,
     BrandsComponent,
-    ContactComponent
+    ContactComponent,
+    QuoteComponent,
   ],
   imports: [
     BrowserModule,

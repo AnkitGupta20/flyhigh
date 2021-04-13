@@ -1,30 +1,20 @@
-<div class="container my-4">
-    <div class="row">
-        <div class="col-sm-3 default-bg-col rounded-left">
-            <div class="text-center mt-5 align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" height="70" width="70" class="bi bi-envelope" viewBox="0 0 10 10">
-                    <path style="fill: white;" d="M0 1v1l4 2 4-2v-1h-8zm0 2v4h8v-4l-4 2-4-2z" id="envelope-closed">
-                    </path>
-                </svg>
-                <h2>Contact Us</h2>
-                <h6>We would love to hear from you !</h6>
-            </div>
-        </div>
-        <div class="col-sm-9">
-            <div *ngIf="contactForm">
+<div>
+    <div class="modal-body p-0">
+        <div class="container">
+            <div class="row p-4 default-bg-col">Please submit your details and our sales team will contact you shortly</div>
+            <div class="p-4">
                 <form [formGroup]="contactForm" (ngSubmit)="sendMail()">
                     <div class="form-group">
                         <input autocomplete="off" formControlName="name" style="box-sizing: unset;" type="text" class="mt-2 w-100 background-image-u border-top-0 border-right-0  border-left-0 default-border-col" [ngClass]="{'default-border-danger-col': submitted && controls.name.errors, 'default-border-col':!submitted || submitted && !controls.name.errors}"
                             id="name" placeholder="Your Name">
                         <div *ngIf="submitted && controls.name.errors" class="">
-                            <div class="invalid-feedback d-block" *ngIf="controls && controls.name.errors.required">Name is required</div>
+                            <div class="invalid-feedback d-block" *ngIf="controls && controls.name.errors.required">
+                                Name is required</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <input autocomplete="off" formControlName="email" style="box-sizing: unset;" type="email" class="mt-2 w-100 background-image-u border-top-0 border-right-0  border-left-0 default-border-col pt-2" [ngClass]="{'default-border-danger-col': submitted && controls.email.errors, 'default-border-col':!submitted || submitted && !controls.email.errors}"
                             aria-describedby="emailHelp" placeholder="Your email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                            else.</small>
                         <div *ngIf="submitted && controls.email.errors">
                             <div class="invalid-feedback d-block" *ngIf="controls.email.errors.required">Email is required
                             </div>
@@ -32,7 +22,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input autocomplete="off" formControlName="phone" style="box-sizing: unset;" type="text" class="mt-2 w-100 background-image-u border-top-0 border-right-0  border-left-0 default-border-col pt-2" [ngClass]="{'default-border-danger-col': submitted && controls.phone.errors, 'default-border-col':!submitted || submitted && !controls.phone.errors}"
+                        <input autocomplete="off" formControlName="phone" type="text" class="mt-2 w-100 background-image-u border-top-0 border-right-0  border-left-0 default-border-col pt-2" [ngClass]="{'default-border-danger-col': submitted && controls.phone.errors, 'default-border-col':!submitted || submitted && !controls.phone.errors}"
                             placeholder="Your phone number">
                         <div *ngIf="submitted && controls.phone.errors">
                             <div class="invalid-feedback d-block" *ngIf="controls && controls.phone.errors.required">
@@ -42,27 +32,17 @@
 
                         </div>
                     </div>
-                    <div class="form-group">
-                        <select formControlName="project" style="box-sizing: unset;" class="mt-2 w-100 background-image-u border-top-0 border-right-0  border-left-0 default-border-col pt-2" [ngClass]="{'default-border-danger-col': submitted && controls.phone.errors, 'default-border-col':!submitted || submitted && !controls.phone.errors}">
-                            <option *ngFor="let item of projects" [value]="item.ID">{{item.Value}}</option>
-                        </select>
-
-                        <div class="invalid-feedback d-block" *ngIf="submitted && controls && controls.project.value === '0'">Please Select your interested project</div>
-                    </div>
-                    <div class="form-group">
-                        <!-- <label class="font-weight-bold" for="exampleFormControlTextarea1">Message</label> -->
-                        <textarea placeholder="Message" formControlName="message" class="rounded mt-2 w-100 background-image-u default-border-col pt-2" rows="3"></textarea>
-                    </div>
                     <div *ngIf="success" class="alert alert-success text-center" role="alert">
                         Thank you for contacting us. Our Team will contact you shortly.
                     </div>
+
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary default-col bg-dark border-0">Send Message</button>
+                        <button type="submit" class="btn btn-primary default-col bg-dark border-0">Get Callback</button>
                     </div>
 
                 </form>
             </div>
+
         </div>
     </div>
-
 </div>

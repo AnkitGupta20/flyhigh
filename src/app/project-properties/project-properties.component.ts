@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
+
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Project } from '../Models/project.model';
 
 @Component({
@@ -10,15 +12,16 @@ export class ProjectPropertiesComponent implements OnInit {
 
   @Input()
   selectedProject: Project = new Project;
+  @ViewChild('formmodal') formmodal: TemplateRef<any> | undefined;
   
-  constructor() { }
+  
+  constructor(private modal: NgbModal) { }
 
   ngOnInit(): void {
   }
+  
 
   onSelectedVariant(id: Number){
-    console.log('method called');
-    
     this.selectedProject.Variants.forEach((item) => {
       if(item.ID === id) {
         item.IsSelected = true
@@ -38,12 +41,7 @@ export class ProjectPropertiesComponent implements OnInit {
       }
     });
   }
-
-
-
   onSelectedVariantType(id: Number, VariantId: Number){
-    console.log('method called');
-    
     this.selectedProject.Variants.forEach((item) => {
       if(item.ID === id) {
         item.VariantType.forEach(param => {
@@ -57,9 +55,10 @@ export class ProjectPropertiesComponent implements OnInit {
       }
     });
   }
-
-  ngAfterViewInit() {
-    console.log('Project Properties Component Loader Successfully');
+  onGetQuoteClick(selectedProject: Project) {
+    this.modal.open(this.formmodal, {size: 'md'});
   }
+
+  
 
 }

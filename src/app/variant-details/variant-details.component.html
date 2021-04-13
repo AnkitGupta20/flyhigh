@@ -19,7 +19,7 @@
 
                 <div class="p-2 ml-2">
                     <div style="font-size:15px;font-weight:400">{{variantType.CarpetArea}} Sqft</div>
-                    <div class="default-col" style="font-size:13px;font-weight:600">Carpet Area</div>
+                    <div class="default-col" style="font-size:13px;font-weight:600">{{variantType.isReferenceArea ? 'Carpet Area' : 'Saleable Area'}}</div>
                 </div>
 
                 <div class="p-2 ml-2" *ngIf="variantType.isReferenceArea">

@@ -39,6 +39,8 @@ export class ProjectDetailComponent implements OnInit {
 private getProductDetail(id: Number) {
   this.service.getProjectDetailsById(id).subscribe((data : Project) => {
     this.selectedProject = data
+    console.log(this.selectedProject);
+    
     this.selectedProject.Variants[0].IsSelected = true;
     this.selectedProject.Variants[0].VariantType[0].IsSelected = true;
   })

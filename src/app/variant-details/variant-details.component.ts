@@ -7,20 +7,13 @@ import { ProjectVariantType } from '../Models/Variant-type.model';
   templateUrl: './variant-details.component.html',
   styleUrls: ['./variant-details.component.css']
 })
-export class VariantDetailsComponent implements OnInit {
+export class VariantDetailsComponent {
 
   @Input()
   variantType: ProjectVariantType = new ProjectVariantType;
   @ViewChild('imageModal') imageModal: TemplateRef<any> | undefined;
   
   constructor(private modal: NgbModal) { }
-
-  ngOnInit(): void {
-  }
-
-  ngAfterViewInit() {
-    console.log('Variant Details Component Loader Successfully');
-  }
   
   showModal() {
     this.modal.open(this.imageModal, {size: 'xl'});

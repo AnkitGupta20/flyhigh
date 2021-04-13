@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ImageUrl } from '../Models/image.model';
 
@@ -7,16 +7,24 @@ import { ImageUrl } from '../Models/image.model';
   templateUrl: './image-carousel.component.html',
   styleUrls: ['./image-carousel.component.css']
 })
-export class ImageCarouselComponent implements OnInit {
+export class ImageCarouselComponent implements OnInit, OnDestroy {
 
   @Input() images: ImageUrl[] = []
   @Input() isEnlarge: boolean = false
   currentImage: any = new ImageUrl();
   @ViewChild('imageModal') imageModal: TemplateRef<any> | undefined;
-  
+  private interval: any;
   constructor(private modal: NgbModal) { }
 
   ngOnInit(): void {
+    this.interval = setInterval(() => {
+      this.OnNextClick();
+    },5000);
+  }
+  ngOnDestroy() {
+    if(this.interval) {
+      clearInterval(this.interval);
+    }
   }
 
   openImagesInModal(id: number) {

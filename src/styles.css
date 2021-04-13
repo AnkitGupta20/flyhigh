@@ -12,6 +12,18 @@
     background-color: rgb(192, 148, 53)!important;
 }
 
+.default-border-col {
+    border-color: rgb(192, 148, 53)!important;
+}
+
+.default-border-danger-col {
+    border-color: #dc3545!important;
+}
+
 .default-fill-col {
     fill: rgb(192, 148, 53)!important;
+}
+
+.background-image-u {
+    background-image: unset !important;
 }

@@ -12,7 +12,9 @@
         <nav>
             <div class="nav nav-tabs border-bottom-2 cursor-p">
                 <a data-toggle="tab" *ngFor="let projectVar of selectedProject.Variants; let i = index" class="nav-item nav-link active  margin-bottom-minus-2" [ngClass]="{'floorPlan-Border-nobottom': projectVar.IsSelected === true, 'tab-non-selected' : projectVar.IsSelected === false, 'ml-2': i > 0 }"
-                    (click)="onSelectedVariant(projectVar.ID)">{{projectVar.Name}}</a>
+                    (click)="onSelectedVariant(projectVar.ID)">{{projectVar.Name}}
+                </a>
+                <button type="button" (click)="onGetQuoteClick(selectedProject)" class="btn btn-warning ml-auto  default-bg-col border-0 rounded text-white mb-1">Get Quote</button>
             </div>
         </nav>
         <div class="tab-content">
@@ -24,7 +26,8 @@
                                 <nav class="cursor-p" *ngIf="projectVar.VariantType.length > 1">
                                     <div class="nav nav-tabs border-0" role="tablist">
                                         <a *ngFor="let varType of projectVar.VariantType; let i = index" class="nav-item nav-link active m-2 rounded" [ngClass]="{'Variant-Selected-style': varType.IsSelected === true, 'Variant-not-Selected-style' : varType.IsSelected === false, 'ml-2': i > 0 }"
-                                            (click)="onSelectedVariantType(projectVar.ID,varType.VariantId)">{{varType.isReferenceArea === true ? varType.ReferenceArea : varType.CarpetArea}} sqft</a>
+                                            (click)="onSelectedVariantType(projectVar.ID,varType.VariantId)">{{varType.isReferenceArea
+                                            === true ? varType.ReferenceArea : varType.CarpetArea}} sqft</a>
                                     </div>
                                 </nav>
                             </div>
@@ -41,3 +44,7 @@
         </div>
     </div>
 </div>
+
+<ng-template #formmodal>
+    <app-quote></app-quote>
+</ng-template>

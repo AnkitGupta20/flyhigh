@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "abusaidm.html-snippets",
-        "lonefy.vscode-js-css-html-formatter"
+        "lonefy.vscode-js-css-html-formatter",
+        "tomblind.scm-buttons-vscode"
     ]
 }
